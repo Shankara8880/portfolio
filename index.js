@@ -10,8 +10,7 @@ app.use(express.json())
 app.use(cors())
 
 //routes contact
-app.use("/contact", require("./routes/contactRoutes"))
-// app.use("/user", require("./routes/userRouters"))
+app.use("/api/contact", require("./routes/contactRoutes"))
 app.use("*", (req, res) => {
     res.sendFile(path.join(__dirname, "dist/index.html"))
     // res.status(404).json({
