@@ -7,7 +7,19 @@ const app = express()
 connectDB()
 app.use(express.static(path.join(__dirname, "dist")))
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    credentials: true,
+    origin: (o, cb) => {
+        allowed = [
+            "https://portfolio-production-7da7.up.railway.app"
+        ]
+        if (allowed.indexOf(o) !== -1 || !o) {
+            cb(null, true)
+        } else {
+            cb("Block by cors")
+        }
+    }
+}))
 
 //routes contact
 app.use("/api", require("./routes/contactRoutes"))
