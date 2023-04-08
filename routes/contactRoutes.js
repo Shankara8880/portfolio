@@ -1,6 +1,6 @@
 const { addContactUser } = require("../controllers/contactController")
 const router = require("express").Router()
 
-router.post("/add-contact", addContactUser)
+router.post("/contact/add-contact", addContactUser)
 
 module.exports = router
