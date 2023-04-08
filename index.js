@@ -22,7 +22,7 @@ app.use(cors({
 }))
 
 //routes contact
-app.use("/api", require("./routes/contactRoutes"))
+app.use("/api/contact", require("./routes/contactRoutes"))
 app.use("*", (req, res) => {
     res.sendFile(path.join(__dirname, "dist/index.html"))
     // res.status(404).json({
