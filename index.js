@@ -3,6 +3,8 @@ const connectDB = require("./config/db")
 const cors = require("cors")
 const { default: mongoose } = require("mongoose")
 require("dotenv").config({ path: "./.env" })
+const path = require('path')
+
 const app = express()
 connectDB()
 app.use(express.static(path.join(__dirname, "dist")))
