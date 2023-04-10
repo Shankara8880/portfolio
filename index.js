@@ -27,10 +27,10 @@ app.use(cors({
 app.use("/api/contact", require("./routes/contactRoutes"))
 app.use("*", (req, res) => {
     res.sendFile(path.join(__dirname, "dist/index.html"))
-    // res.status(404).json({
-    // message: " 404 : Resource You Are Looking For Is Not Awailable"
-    // })
 })
+// res.status(404).json({
+// message: " 404 : Resource You Are Looking For Is Not Awailable"
+// })
 const PORT = process.env.PORT || 5000
 
 mongoose.connection.once("open", () => {
