@@ -12,7 +12,7 @@ app.use(cors({
     credentials: true,
     origin: (o, cb) => {
         allowed = [
-            "https://boisterous-parfait-f6f4f2.netlify.app"
+            "https://shankar-bevale-portfolio.netlify.app"
         ]
         if (allowed.indexOf(o) !== -1 || !o) {
             cb(null, true)
