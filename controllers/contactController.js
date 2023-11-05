@@ -22,7 +22,7 @@ exports.addContactUser = async (req, res) => {
             sub: subject
         })
         res.status(200).json({
-            status:200,
+            status:200, 
             message: "Send Email SuccessFully ✅, Thank You For your interest 🙏",
         })
     } catch (error) {
