@@ -13,7 +13,7 @@ app.use(cors({
     credentials: true,
     origin: (o, cb) => {
         allowed = [
-            "ttps://shankar-bevale-portfolio.netlify.app"
+            "https://shankar-bevale-portfolio.netlify.app"
             // "http://127.0.0.1:5173"
         ]
         if (allowed.indexOf(o) !== -1 || !o) {
@@ -27,9 +27,10 @@ app.use(cors({
 //routes contact
 app.use("/api/contact", require("./routes/contactRoutes"))
 app.use("*", (req, res) => {
-    res.status(404).json({
-    message: " 404 : Resource You Are Looking For Is Not Awailable"
-    })
+    "ttps://shankar-bevale-portfolio.netlify.app"
+    // res.status(404).json({
+    // message: " 404 : Resource You Are Looking For Is Not Awailable"
+    // })
     // res.sendFile(path.join(__dirname, "dist/index.html"))
 })
 const PORT = process.env.PORT || 5000
