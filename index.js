@@ -13,7 +13,8 @@ app.use(cors({
     credentials: true,
     origin: (o, cb) => {
         allowed = [
-            "https://portfolio-production-7da7.up.railway.app"
+            "ttps://shankar-bevale-portfolio.netlify.app"
+            // "http://127.0.0.1:5173"
         ]
         if (allowed.indexOf(o) !== -1 || !o) {
             cb(null, true)
@@ -26,11 +27,11 @@ app.use(cors({
 //routes contact
 app.use("/api/contact", require("./routes/contactRoutes"))
 app.use("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "dist/index.html"))
+    res.status(404).json({
+    message: " 404 : Resource You Are Looking For Is Not Awailable"
+    })
+    // res.sendFile(path.join(__dirname, "dist/index.html"))
 })
-// res.status(404).json({
-// message: " 404 : Resource You Are Looking For Is Not Awailable"
-// })
 const PORT = process.env.PORT || 5000
 
 mongoose.connection.once("open", () => {
