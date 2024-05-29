@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "pm2 start ecosystem.config.json --no-daemon",
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "dev": "cross-env NODE_ENV=development node src/index.js",
     "prod": "cross-env NODE_ENV=production node src/index.js"
   }
 }
