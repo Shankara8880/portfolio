@@ -8,19 +8,22 @@ const app = express()
 connectDB()
 app.use(express.static(path.join(__dirname, "dist")))
 app.use(express.json())
-app.use(cors({
-    credentials: true,
-    origin: (o, cb) => {
-        allowed = [
-            "https://shankar-bevale-portfolio.netlify.app"
-        ]
-        if (allowed.indexOf(o) !== -1 || !o) {
-            cb(null, true)
-        } else {
-            cb("Block by cors")
-        }
-    }
-}))
+// app.use(cors({
+//     credentials: true,
+//     origin: (o, cb) => {
+//         allowed = [
+//             "https://shankar-bevale-portfolio.netlify.app"
+//         ]
+//         if (allowed.indexOf(o) !== -1 || !o) {
+//             cb(null, true)
+//         } else {
+//             cb("Block by cors")
+//         }
+//     }
+// }))
+app.use(cors());
+app.options('*', cors());
+
 
 //routes contact
 app.use("/api/contact", require("./routes/contactRoutes"))
