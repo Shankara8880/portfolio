@@ -24,8 +24,8 @@ app.use(cors({
 
 //routes contact
 app.use("/api/contact", require("./routes/contactRoutes"))
-app.use("*", (req, res) => {
-    res.send("Hello from shankar")
+app.all("/", (req, res) => {
+    res.send("Hello from API")
     // res.sendFile(path.join(__dirname, "dist/index.html"))
     // res.status(404).json({
     // message: " 404 : Resource You Are Looking For Is Not Awailable"
