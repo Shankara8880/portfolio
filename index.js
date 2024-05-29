@@ -27,7 +27,8 @@ app.use(cors({
 //routes contact
 app.use("/api/contact", require("./routes/contactRoutes"))
 app.use("*", (req, res) => {
-    "ttps://shankar-bevale-portfolio.netlify.app"
+    res.send("Hello from API")
+    // "https://shankar-bevale-portfolio.netlify.app"
     // res.status(404).json({
     // message: " 404 : Resource You Are Looking For Is Not Awailable"
     // })
