@@ -12,7 +12,7 @@ exports.sendEmail = ({ sub, msg }) => {
     transporter.sendMail({
         to: process.env.EMAIL_TO,
         from: process.env.EMAIL_ID,
-        subject: `PortFolio ${sub}`,
+        subject: `${sub}`,
         // text: msg,
         html: msg
     }, (err) => {

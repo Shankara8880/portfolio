@@ -15,7 +15,7 @@ exports.addContactUser = async (req, res) => {
             subject
         })
         sendEmail({
-            html: `
+            msg: `
                 <p>Dear Shankar,</p>
                 <p>Enquiry from  : ${name}</p>
                 <p>message: ${message}</p>
