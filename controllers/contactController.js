@@ -15,11 +15,15 @@ exports.addContactUser = async (req, res) => {
             subject
         })
         sendEmail({
-            msg: `<h1>Name : ${name}</h1> 
-            <p>email : ${email}</p>
-            <p>Message : ${message}</p>
-            `,
-            sub: subject
+            html: `
+                <p>Dear Shankar,</p>
+                <p>Enquiry from  : ${name}</p>
+                <p>message: ${message}</p>
+                <p>Best regards,</p>
+                <p>Tim Hortons</p>
+                <p>${subject}</p>
+                `,
+            sub: "Interest in Your Portfolio and Potential Collaboration :" + subject
         })
         res.json({
             message: "Send Email SuccessFully ✅, Thank You For your interest 🙏",
